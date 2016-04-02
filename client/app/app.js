@@ -1,0 +1,1 @@
+angular.module('SergheiApp', ['app.core','app.routes','app.services']);

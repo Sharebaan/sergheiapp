@@ -1,0 +1,24 @@
+{
+  "name": "SergheiApp",
+  "description": "Serghei e smk",
+  "main": "server.js",
+  "authors": [
+    "Vlad"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Sharebaan/sergheiapp",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/assets/js/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "ui-router#^0.2.18"
+  }
+}

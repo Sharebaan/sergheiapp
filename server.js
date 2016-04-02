@@ -16,11 +16,12 @@ var express = require('express');
 // Creates a new instance of SimpleServer with the following options:
 //  * `port` - The HTTP port to listen on. If `process.env.PORT` is set, _it overrides this value_.
 //
-var router = express();
-var server = http.createServer(router);
+var app = express();
+var server = http.createServer(app);
 var io = socketio.listen(server);
 
-router.use(express.static(path.resolve(__dirname, 'client')));
+app.use(express.static(path.resolve(__dirname, 'client')));
+
 var messages = [];
 var sockets = [];
 
@@ -77,6 +78,21 @@ function broadcast(event, data) {
     socket.emit(event, data);
   });
 }
+
+
+//=================== aici intra rutele si controllere ===================
+
+
+
+var routes = require('./server/routes');
+//var controllers = require('./server/controllers'); later
+routes.setup(app);
+
+
+
+
+//=====================================================
+
 
 server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function(){
   var addr = server.address();
