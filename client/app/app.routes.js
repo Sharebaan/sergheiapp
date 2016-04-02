@@ -4,8 +4,11 @@ angular.module('app.routes',['ui.router'])
         .state('homepage', {
             url: '/',
             templateUrl: 'app/sections/homepage/homepage.tpl.html',
-            controller: 'HomepageCtrl',
-            controllerAs: 'home'
+            controller: function(){
+              var vm = this;
+              this.title = 'Serghei'
+            },
+            controllerAs: 'homepage'
         })
         .state('404', {
             url: '/404',
