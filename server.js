@@ -6,7 +6,9 @@ var path = require('path');
 
 var async = require('async');
 var socketio = require('socket.io');
+var cors = require('cors');
 var express = require('express');
+var bodyParser = require('body-parser');
 
 //
 // ## SimpleServer `SimpleServer(obj)`
@@ -82,7 +84,7 @@ function broadcast(event, data) {
 
 var routes = require('./server/routes');
 //var controllers = require('./server/controllers'); later
-routes.setup(app);
+routes.setup(app,cors,bodyParser);
 
 //=====================================================
 
