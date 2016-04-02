@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="SergheiApp">
+<html lang="en" ng-app="app">
   <head>
     <title>SergheiApp</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,11 +11,16 @@
     <div class="container" ui-view>
       
     </div>
-    <script src="/assets/socket.io/socket.io.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
     <script src="/assets/js/jquery.min.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
     <script src="/assets/js/components/angular/angular.min.js"></script>
     <script src="/assets/js/components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script type="text/javascript" src="/app/app.js"></script>
+    <script type="text/javascript" src="/app/app.core.js"></script>
+    <script type="text/javascript" src="/app/app.routes.js"></script>
+    <script type="text/javascript" src="/app/app.services.js"></script>
+    <script type="text/javascript" src="/app/sections/homepage/homepage.ctrl.js"></script>
+    <script type="text/javascript" src="/app/components/chat/chat.ctrl.js"></script>
   </body>
 </html>
