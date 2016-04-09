@@ -1,23 +1,8 @@
-exports.setup = function(app,cors){
+exports.setup = function(req,res) {
+  var Promise = require("node-promise").Promise;
   
-  app.use(cors());
-  app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-  });  
-  
-
-  app.get('/search',require('./controllers/search').setup);
-  
-  
-  /*var Promise = require("node-promise").Promise;
-  
-  
-  app.get('/search',function(req, res){
-    
-    var graph = require('fbgraph');
-    graph.setAccessToken('CAACEdEose0cBANMxUHc4cSEYRUQ5YD2xvFY4NDDWABZBHfGgy4QBrcTQFxijqEyB0hozxhnaJtZCgArS86f9HmDZCPZBU7wavwFaRwx9LZB9iZAuo5ukIMITKTRJGAZAGJYIVJprXyn9YQ5ZCfxPPD0PcU4CTF1BcQeXZB7VztmOVGNaUZBsh9BYdZBarHT4QzL0wrS9yPejr8t3lidal0ZBwwdS');
+  var graph = require('fbgraph');
+    graph.setAccessToken('CAACEdEose0cBANZBXyXPkN3x3YEEUPnDdhIQ990qoWDtdLZAcQGnxC7DeFDt1PPbhh9jgqZBbI9AVv5qBkMAXSt28ZAY6Qr9zLU8o6uTMo1fBD2fduSSueXypWoAk9GcuN5rvK32Xl7ZB3RieZBdkpuXMUYrCjWew7nlhm1CfcBspnZBcRZCZAxN85Fu8vJt5pNZA6N1S05he8OwStCTcYOZC59');
     
     var promiseProfile = new Promise();
     var promisePicture = new Promise();
@@ -51,8 +36,4 @@ exports.setup = function(app,cors){
       }
       res.json(profilesImages.profiles);
     });
-  });  
-  */
-  
-  
 };

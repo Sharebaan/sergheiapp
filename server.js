@@ -83,9 +83,9 @@ function broadcast(event, data) {
 //=================== aici intra rutele si controllere ===================
 
 var routes = require('./server/routes');
-//var controllers = require('./server/controllers'); later
-routes.setup(app,cors,bodyParser);
-
+//var controllers = require('./server/controllers/');
+routes.setup(app,cors);
+//require('./server/routes')(app,cors);
 //=====================================================
 
 
