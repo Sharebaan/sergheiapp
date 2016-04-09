@@ -1,13 +1,22 @@
-exports.setup = function(req,res) {
-  var Promise = require("node-promise").Promise;
+exports.search =  function(req,res) {
   
-  var graph = require('fbgraph');
-    graph.setAccessToken('CAACEdEose0cBANZBXyXPkN3x3YEEUPnDdhIQ990qoWDtdLZAcQGnxC7DeFDt1PPbhh9jgqZBbI9AVv5qBkMAXSt28ZAY6Qr9zLU8o6uTMo1fBD2fduSSueXypWoAk9GcuN5rvK32Xl7ZB3RieZBdkpuXMUYrCjWew7nlhm1CfcBspnZBcRZCZAxN85Fu8vJt5pNZA6N1S05he8OwStCTcYOZC59');
+  var Promise = require("node-promise").Promise;
+  var graph = require('../fbg').fbgraph();
+    
     
     var promiseProfile = new Promise();
     var promisePicture = new Promise();
-
-    graph.get("search?q="+req.query.find+"&type=page&limit=5", function(err, res){
+    
+    var limit = req.query.limit || 5;
+    var offset = req.query.offset || 0;
+    var params = {
+      q: req.query.find,
+      type: 'page',
+      limit: limit,
+      offset: offset
+    }
+    
+    graph.get("search", params, function(err, res){
       promiseProfile.resolve(res);
     });
     
