@@ -1,5 +1,9 @@
 //
+<<<<<<< HEAD
 // SimpleServer
+=======
+// # SimpleServer
+>>>>>>> origin/master
 //
 var http = require('http');
 var path = require('path');
@@ -10,7 +14,13 @@ var cors = require('cors');
 var express = require('express');
 var bodyParser = require('body-parser');
 
+<<<<<<< HEAD
 
+=======
+//
+// ## SimpleServer `SimpleServer(obj)`
+//
+>>>>>>> origin/master
 // Creates a new instance of SimpleServer with the following options:
 //  * `port` - The HTTP port to listen on. If `process.env.PORT` is set, _it overrides this value_.
 //
@@ -85,9 +95,6 @@ routes.setup(app,cors);
 
 var fbjob = require('./server/fbtokenjob').fbjob;
 fbjob();
-
-//=====================================================
-
 
 server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function(){
   var addr = server.address();
